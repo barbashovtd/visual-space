@@ -1,0 +1,32 @@
+set ignore-comments := true
+set dotenv-load := true
+
+py := clean(join(canonicalize(env("VIRTUAL_ENV", '')), "bin", "python"))
+manpy := py + " manage.py"
+true := "trueyeson1"
+false := "falsenoff0"
+
+[private]
+default:
+    @just --list --list-heading ''
+
+# runserver
+run plus=true *args='':
+    @{{ manpy }} runserver{{ if plus =~ "true|yes|on|1" { "_plus" } else { if plus =~ "false|no|off|0" { "" } else { error('Так plus или не plus?') } } }} {{ args }}
+
+# make migrations
+mkm *args='':
+    @{{ manpy }} makemigrations {{ args }}
+
+# migrate
+[confirm("Уверены?")]
+mgm *args='':
+    @{{ manpy }} migrate {{ args }}
+
+# run interactive shell
+shell plus=true *args='':
+    @{{ manpy }} shell{{ if plus =~ "true|yes|on|1" { "_plus" } else { if plus =~ "false|no|off|0" { "" } else { error('Так plus или не plus?') } } }} {{ args }}
+
+[private]
+@fmt:
+    just --unstable --fmt
