@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "Backend Root [VisualSpace]"
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true,
+		"mypy.runUsingActiveInterpreter": true,
+		"mypy.enabled": false,
+		"[python]": {
+			"editor.defaultFormatter": "ms-python.black-formatter",
+			"editor.codeActionsOnSave": {
+				"source.organizeImports": "explicit",
+			}
+		},
+		"python.terminal.activateEnvironment": false,
+		"python.terminal.activateEnvInCurrentTerminal": false,
+		"cSpell.enabled": false,
+		"cSpell.language": "en,ru",
+		"cSpell.spellCheckOnlyWorkspaceFiles": true,
+		"cSpell.showAutocompleteSuggestions": true,
+		"cSpell.allowCompoundWords": true
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-python.black-formatter",
+			"charliermarsh.ruff",
+			"streetsidesoftware.code-spell-checker",
+			"ms-azuretools.vscode-docker",
+			"streetsidesoftware.code-spell-checker-russian",
+			"esbenp.prettier-vscode",
+		]
+	}
+}

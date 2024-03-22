@@ -1,0 +1,107 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "back"
+dynamic = ["version"]
+description = ''
+readme = "../README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [{ name = "barbashovtd", email = "barbashovtd@mail.ru" }]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+dependencies = [
+  "django ~= 5.0",
+  "djangorestframework ~= 3.15",
+  "django-cors-headers ~= 4.3",
+  "django-filter ~= 24.1",
+  "python-dotenv >= 1.0.0",
+]
+optional-dependencies = { dev = [
+  "black",
+  "ruff",
+  "django-extensions",
+  "werkzeug",
+  "drf-spectacular[sidecar]",
+], dev-shell = [
+  "ptpython",
+], all = [
+  "back[dev,dev-shell]",
+] }
+
+[project.urls]
+Documentation = "https://github.com/barbashovtd/visual-space/#readme"
+Issues = "https://github.com/barbashovtd/visual-space/issues"
+Source = "https://github.com/barbashovtd/visual-space/"
+
+[tool.hatch.version]
+path = "__about__.py"
+
+[tool.hatch.build]
+dev-mode-dirs = ["."]
+skip-excluded-dirs = true
+
+[tool.ruff]
+line-length = 120
+select = ["ALL"]
+ignore = [
+  "ANN101",
+  "ANN201",
+  "D100",
+  "D101",
+  "D102",
+  "D103",
+  "D212",
+  "DJ008",
+  "FA100",
+  "FA102",
+  "FBT001",
+  "PGH003",
+  "PLR0913",
+  "RUF012",
+  "T201",
+  "TD001",
+  "TD002",
+  "TD003",
+  "UP007",
+]
+cache-dir = "/tmp/ruff-cache"
+
+[tool.black]
+line-length = 120
+
+
+[tool.hatch.envs.default]
+dependencies = ["coverage[toml]>=6.5", "pytest"]
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+test-cov = "coverage run -m pytest {args:tests}"
+cov-report = ["- coverage combine", "coverage report"]
+cov = ["test-cov", "cov-report"]
+
+[[tool.hatch.envs.all.matrix]]
+python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
+
+[tool.coverage.run]
+source_pkgs = ["back", "tests"]
+branch = true
+parallel = true
+omit = ["src/back/__about__.py"]
+
+[tool.coverage.paths]
+back = ["src/back", "*/back/src/back"]
+tests = ["tests", "*/back/tests"]
+
+[tool.coverage.report]
+exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
