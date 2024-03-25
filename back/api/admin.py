@@ -7,16 +7,16 @@ from .models import Appeal
 class AppealAdminPage(admin.ModelAdmin):
     fieldsets = [
         (
-            "Заявка",
+            None,
             {
-                "fields": ["name", "phone"],
+                "fields": [("name", "phone"), ("date_created", "date_updated"), "comment"],
             },
         ),
-        (None, {"fields": ["date_created", "date_updated"]}),
-        (None, {"fields": ["comment"]}),
         ("Дополнительно", {"fields": ["notes"]}),
     ]
     readonly_fields = ("date_created", "date_updated")
+
+    ordering = ("-date_created",)
 
 
 admin.site.register(Appeal, AppealAdminPage)
