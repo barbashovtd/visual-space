@@ -10,6 +10,8 @@ if not all(dotenv.dotenv_values(dotfile).values()):
     print("Empty environment values!", flush=True)
     sys.exit(126)
 
+dotenv.load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +22,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # !SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("KEY")
 
+
 DEBUG = os.getenv("DEBUG")
+if DEBUG == "True":
+    DEBUG = True
+elif DEBUG == "False":
+    DEBUG = False
+else:
+    print("Invalid vaue of DEBUG variable", flush=True)
+    sys.exit(126)
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(" ")
 
@@ -32,10 +42,18 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    "corsheaders",
 ]
+
 
 if DEBUG:
     INSTALLED_APPS.append("django_extensions")
+    INSTALLED_APPS.append("drf_spectacular")
+    CORS_ALLOWED_ORIGINS = ["https://localhost"]
+else:
+    CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS").split(" ")  # на всякий случай чтобы не было ошибок
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -45,6 +63,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",  # для cors
 ]
 
 ROOT_URLCONF = "visualspace.urls"
