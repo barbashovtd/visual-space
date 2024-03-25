@@ -1,12 +1,10 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from rest_framework.schemas import get_schema_view
 
 from visualspace.settings import DEBUG
 
-urlpatterns = [
-    path("admin/", admin.site.urls),
-]
+urlpatterns = [path("admin/", admin.site.urls), path("api/", include("api.urls"))]
 
 if DEBUG:
     urlpatterns.append(
