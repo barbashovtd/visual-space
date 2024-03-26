@@ -1,10 +1,8 @@
 from django.contrib import admin
 from .models import Appeal
 
-# Register your models here.
 
-
-class AppealAdminPage(admin.ModelAdmin):
+class AppealAdmin(admin.ModelAdmin):
     fieldsets = [
         (
             None,
@@ -19,4 +17,4 @@ class AppealAdminPage(admin.ModelAdmin):
     ordering = ("-date_created",)
 
 
-admin.site.register(Appeal, AppealAdminPage)
+admin.site.register(Appeal, AppealAdmin)

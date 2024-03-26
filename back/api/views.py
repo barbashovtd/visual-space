@@ -4,6 +4,5 @@ from .serializers import AppealSerializer
 
 
 class CreateItem(CreateAPIView):
-
     queryset = Appeal.objects.all()
     serializer_class = AppealSerializer

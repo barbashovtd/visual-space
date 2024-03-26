@@ -22,15 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # !SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("KEY")
 
-
-DEBUG = os.getenv("DEBUG")
-if DEBUG == "True":
-    DEBUG = True
-elif DEBUG == "False":
-    DEBUG = False
-else:
-    print("Invalid vaue of DEBUG variable", flush=True)
-    sys.exit(126)
+DEBUG = bool(int(os.getenv("DEBUG")))
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(" ")
 
@@ -47,13 +39,12 @@ INSTALLED_APPS = [
     "api",
 ]
 
+CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS").split(" ")  # на всякий случай чтобы не было ошибок
 
 if DEBUG:
     INSTALLED_APPS.append("django_extensions")
     INSTALLED_APPS.append("drf_spectacular")
     CORS_ALLOWED_ORIGINS = ["https://localhost"]
-else:
-    CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS").split(" ")  # на всякий случай чтобы не было ошибок
 
 
 MIDDLEWARE = [
@@ -65,6 +56,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "corsheaders.middleware.CorsMiddleware",  # для cors
+    # Ass хай ass поссибл
 ]
 
 ROOT_URLCONF = "visualspace.urls"
