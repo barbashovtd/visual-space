@@ -48,6 +48,7 @@ if DEBUG:
 
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",  # для cors
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -55,8 +56,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",  # для cors
-    # Ass хай ass поссибл
 ]
 
 ROOT_URLCONF = "visualspace.urls"
