@@ -11,7 +11,9 @@ class AppealAdmin(admin.ModelAdmin):
     def __export_as(self, file_type, queryset):
         current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
 
-        response = HttpResponse(content_type="text/csv")
+        content_type = {"csv": "text/csv", "xlsx": "application/vnd.ms-excel"}
+
+        response = HttpResponse(content_type=content_type[file_type])
         response["Content-Disposition"] = f"attachment; filename=Imported_data_{current_time}.{file_type}"
 
         field_names = ["name", "phone", "date_created", "date_updated", "comment", "notes", "id"]
