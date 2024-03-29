@@ -1,6 +1,16 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework.schemas import get_schema_view
 
-urlpatterns = [
-    path("admin/", admin.site.urls),
-]
+from visualspace.settings import DEBUG
+
+urlpatterns = [path("admin/", admin.site.urls), path("api/", include("api.urls"))]
+
+if DEBUG:
+    urlpatterns.append(
+        path(
+            "openapi",
+            get_schema_view(title="Visual Space", description="API", version="1.0.0"),
+            name="openapi-schema",
+        )
+    )
