@@ -15,7 +15,12 @@
             <a class="level-item has-text-centered" href="#services">Услуги</a>
           </div>
         </div>
-        <div class="level-rights">Наши контакты:</div>
+        <div class="level-right subtitle">
+          <p>Контакты:</p>
+          <figure class="image">
+            <a href="tg://resolve?domain=romangio" id="tg-icon"><img src="../assets/tg-icon-default.svg" /></a>
+          </figure>
+        </div>
       </div>
     </div>
   </footer>

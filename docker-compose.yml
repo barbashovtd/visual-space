@@ -1,7 +1,7 @@
 services:
   backend:
     container_name: backend
-    command: gunicorn visualspace.wsgi --reload --bin 0.0.0.0:8000 --threads 4 --log-file -
+    command: gunicorn visualspace.wsgi --reload --bind 0.0.0.0:8000 --threads 4 --log-file -
     build:
       context: ./back
     volumes:

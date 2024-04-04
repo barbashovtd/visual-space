@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "bulma-build": "sass --load-path=node_modules --watch ./src/style.scss ./src/style.css"
+    "bulma-build": "sass --load-path=node_modules --watch ./src/style.scss ./src/style.css",
+    "serve:docker": "vite --host"
   },
   "dependencies": {
     "@tresjs/cientos": "^3.8.0",
@@ -18,7 +19,7 @@
     "bulma": "^1.0.0",
     "node-sass": "^9.0.0",
     "pinia": "^2.1.7",
-    "sass": "^1.72.0",
+    "sass": "^1.74.1",
     "three": "^0.162.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
