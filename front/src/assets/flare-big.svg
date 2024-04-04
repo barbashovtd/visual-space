@@ -1,0 +1,8 @@
+<svg width="514" height="798" viewBox="0 0 550 830" xmlns="http://www.w3.org/2000/svg">
+<defs color-interpolation="sRGB" color-interpolation-filters="sRGB">
+    <filter id="blur-big" x="0" y="0" xmlns="http://www.w3.org/2000/svg">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="16" color-interpolation-filters="sRGB"/>
+    </filter>
+</defs>
+<path filter="url(#blur-big)" fill="#352852" stroke="#352852" d="M0.28125 274.667C180.083 274.667 257.14 197.25 257.14 -35C257.14 197.25 334.198 274.667 513.999 274.667C334.198 274.667 257.14 352.083 257.14 894C257.14 352.083 180.083 274.667 0.28125 274.667Z" />
+</svg>

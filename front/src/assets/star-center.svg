@@ -1,0 +1,25 @@
+<svg width="396" height="416" viewBox="0 0 396 416" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs color-interpolation="sRGB">
+    <linearGradient id="paint0_linear_239_2388" x1="199" y1="0" x2="199" y2="148" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6E6E6" stop-opacity="0" />
+      <stop offset="1" stop-color="#E6E6E6" />
+    </linearGradient>
+    <linearGradient id="paint1_linear_239_2388" x1="199" y1="268" x2="199" y2="416" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6E6E6" />
+      <stop offset="1" stop-color="#E6E6E6" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="paint2_linear_239_2388" x1="396" y1="209" x2="248" y2="209" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6E6E6" stop-opacity="0" />
+      <stop offset="1" stop-color="#E6E6E6" />
+    </linearGradient>
+    <linearGradient id="paint3_linear_239_2388" x1="148" y1="209" x2="0" y2="209" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6E6E6" />
+      <stop offset="1" stop-color="#E6E6E6" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <line x1="198" y1="148" x2="198" stroke="url(#paint0_linear_239_2388)" />
+  <line x1="198" y1="416" x2="198" y2="268" stroke="url(#paint1_linear_239_2388)" />
+  <line x1="248" y1="208" x2="396" y2="208" stroke="url(#paint2_linear_239_2388)" />
+  <line y1="208" x2="148" y2="208" stroke="url(#paint3_linear_239_2388)" />
+  <path d="M148 208C183 208 198 193 198 148C198 193 213 208 248 208C213 208 198 223 198 268C198 223 183 208 148 208Z" fill="#E6E6E6" stroke="#E6E6E6" />
+</svg>

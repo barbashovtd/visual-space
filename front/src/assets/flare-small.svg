@@ -1,0 +1,8 @@
+<svg width="228" height="405" xmlns="http://www.w3.org/2000/svg">
+<defs>
+    <filter id="blur-small" x="0" y="0" xmlns="http://www.w3.org/2000/svg">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="16" color-interpolation-filters="sRGB"/>
+    </filter>
+</defs>
+<path fill="#352852" stroke="#352852" filter="url(#blur-small)" d="M0 135.275C79.3718 135.275 113.388 101.599 113.388 0.570068C113.388 101.599 147.405 135.275 226.776 135.275C147.405 135.275 113.388 168.951 113.388 404.685C113.388 168.951 79.3718 135.275 0 135.275Z" />
+</svg>

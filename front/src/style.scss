@@ -1,0 +1,28 @@
+// $text-caption-color: #CACACA;
+$-black: #0F0F0F;
+$-white: #e6e6e6;
+// $btn-color: #232323;
+// $btn-active-color: #9747FF;
+$-border: #2E2E2E;
+
+@use "bulma/sass" with ($family-primary: '"Onest", sans-serif', $black: $-black, $white: $-white, $border: $-border, $button-active-color: #9747FF, $body-background-color: $-black, $footer-background-color: $-black, $box-radius: 2rem, $box-shadow: #2e2e2e, $navbar-tab-hover-border-bottom-color: transparent, $navbar-tab-hover-background-color: transparent);
+
+@import url('https://fonts.googleapis.com/css2?family=Onest&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap');
+
+.unbounded-title
+{
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.unbounded-subtitle
+{
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}

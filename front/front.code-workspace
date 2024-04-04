@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true,
+		"eslint.enable": true,
+		"eslint.format.enable": false,
+		"eslint.validate": [
+			"javascript",
+			"typescript",
+			"vue"
+		],
+		"[vue]": {
+			"editor.codeActionsOnSave": {
+				"source.organizeImports.eslint": "explicit"
+			},
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"typescript.format.enable": false,
+		"typescript.validate.enable": false,
+		"vite.open": false,
+		"vite.autoStart": false,
+		"vite.browserType": "system",
+		"svg.preview.background": "transparent",
+		"prettier.printWidth": 120,
+		"prettier.singleAttributePerLine": true
+	}
+}
