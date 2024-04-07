@@ -26,6 +26,8 @@ DEBUG = bool(int(os.getenv("DEBUG")))
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(" ")
 
+CORS_ALLOW_HEADERS = "*"
+CORS_ALLOW_ALL_ORIGINS = True
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -41,6 +43,12 @@ INSTALLED_APPS = [
 
 CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS").split(" ")  # на всякий случай чтобы не было ошибок
 
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+CORS_ALLOW_CREDENTIALS = True
+
 if DEBUG:
     INSTALLED_APPS.append("django_extensions")
     INSTALLED_APPS.append("drf_spectacular")
@@ -51,6 +59,7 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",  # для cors
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
